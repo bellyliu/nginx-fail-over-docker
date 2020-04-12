@@ -1,0 +1,36 @@
+version: '3'
+services:
+
+  proxy:
+    image: nginx:latest
+    ports: 
+      - 80:80
+    volumes: 
+      - ./proxy/index.html:/usr/share/nginx/html/index.html
+      - ./proxy/default.conf:/etc/nginx/conf.d/default.conf
+      - ./proxy/error.log:/var/log/nginx/error.log
+    networks: 
+      - nginx
+
+  nginx_1:
+    image: nginx:latest
+    ports: 
+      - 5000:80
+    volumes: 
+      - ./nginx_1/:/usr/share/nginx/html
+      - ./nginx_1/error.log:/var/log/nginx/error.log
+    networks: 
+      - nginx     
+
+  nginx_2:
+    image: nginx:latest
+    ports: 
+      - 5500:80
+    volumes: 
+      - ./nginx_2/:/usr/share/nginx/html
+      - ./nginx_2/error.log:/var/log/nginx/error.log
+    networks: 
+      - nginx  
+
+networks: 
+  nginx:

@@ -1,0 +1,2 @@
+2020/04/12 18:17:58 [error] 6#6: *16 connect() failed (113: No route to host) while connecting to upstream, client: 192.168.16.1, server: _, request: "GET / HTTP/1.1", upstream: "http://192.168.16.3:80/", host: "localhost"
+2020/04/12 18:17:58 [warn] 6#6: *16 upstream server temporarily disabled while connecting to upstream, client: 192.168.16.1, server: _, request: "GET / HTTP/1.1", upstream: "http://192.168.16.3:80/", host: "localhost"
